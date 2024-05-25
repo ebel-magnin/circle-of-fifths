@@ -1,6 +1,6 @@
-# 1. Render Circle of Fifths
+# 1. Circle of Fifths
 
-In music theory, the circle of fifths is a way of organizing pitches as a sequence of perfect fifths. Starting on a C, and using the standard system of tuning for Western music (12-tone equal temperament), the sequence is: C, G, D, A, E, B, F♯ (G♭), C♯ (D♭), G♯ (A♭), D♯ (E♭), A♯ (B♭), E♯ (F), C. This order places the most closely related key signatures adjacent to one another. (source: [wikipedia](https://en.wikipedia.org/wiki/Circle_of_fifths)) It is usually illustrated in the form of a circle.
+In music theory, the circle of fifths is a way of organizing pitches as a sequence of perfect fifths. Starting on a C, and using the standard system of tuning for Western music (12-tone equal temperament), the sequence is: C, G, D, A, E, B, F♯ (G♭), C♯ (D♭), G♯ (A♭), D♯ (E♭), A♯ (B♭), E♯ (F), C. This order places the most closely related key signatures adjacent to one another. (source: https://en.wikipedia.org/wiki/Circle_of_fifths) It is usually illustrated in the form of a circle.
 
 The second part of the project is to add functionality to the circle of fifths using pure javascript. Also css is used in this part of the project.
 
@@ -12,7 +12,7 @@ In this part of the project tone.js is used to play the chosen scale. There are 
 
 ## 3.1 index.html
 
-The project consists of a index.html file with only one div element. In this element the contents of the circle-of-fifths.svg, which was created by copying the svg element in the first part of the project with Chrome DevTools, is added to this div element. This makes the svg inline. I experimented with the html object element to load the svg file, but run into errors which to this day I cannot explain. I also included a html p element to show how the functionalities created by the circle-of-fifths.js script can de used.
+The index.html file only holds one div element. In this element the contents of the circle-of-fifths.svg, which was created by copying the svg element in the first part of the project with Chrome DevTools, is added to this div element. This makes the svg inline. I experimented with the html object element to load the svg file, but run into errors which to this day I cannot explain. I also included a html p element to show how the functionalities created by the circle-of-fifths.js script can de used.
 
 ## 3.2 scale-object.js
 
@@ -47,7 +47,7 @@ The script adds a click event listener to each of the keys by looping through no
 
 With those two values as paraments the showScale function is called. This function looks for the index of the key chosen in the majorScale or minorScale array. The index retrieved is then used to retrieve the object contained in the majorScaleObject or minorScaleObject. From the retrieved object the value of the keys "pitch", "scale" and "chords" is retrieved.
 
-The scale name, the scale and the scale chords are shown in the inner circle and the sacale is played in ascending and descending order.
+The scale name, the scale and the scale chords are shown in the inner circle and the scale is played in ascending and descending order.
 
 The end result looks like this.
 
