@@ -86,6 +86,7 @@ The scale name, the scale and the scale chords are shown in the inner circle and
 The end result looks like this.
 
 ![Circle of Fifths Screenshot](images/screenshot-500x294.png)
+The third scale degree of the D-major scale is F♯. This is lowered by one semi-tone making it F making is a Dm. The third scale degree of E-major is G♯, which is lowered to G. Third scale degree of A-major is C♯, which is lowered to C. Third and fifth scale degree of B-major is D♯ respectively F♯ are both lowered with one semi-tone making them D respectively F. This makes it a diminished B chord.
 
 ## 3.3 styles folder
 This folder contains the file **circle-of-fifths.css**, which holds basic css styles.
