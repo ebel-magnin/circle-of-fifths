@@ -87,7 +87,7 @@ The end result looks like this.
 
 ![Circle of Fifths Screenshot](images/screenshot-500x294.png)
 
-## 3.3 style folder
+## 3.3 styles folder
 This folder contains the file **circle-of-fifths.css**, which holds basic css styles.
 
 # 4. License
