@@ -55,7 +55,7 @@ const majorScaleObject = [
     key: "C",
     pitch: ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5"],
     scale: "C D E F G A B C",
-    chords: "C Dm Em F G Am B°",
+    chords: "C Dm Em F G Am Bdim",
   },
   ...
 ]
@@ -86,6 +86,9 @@ The scale name, the scale and the scale chords are shown in the inner circle and
 The end result looks like this.
 
 ![Circle of Fifths Screenshot](images/screenshot-500x294.png)
+
+## 3.3 style folder
+This folder contains the file **circle-of-fifths.css**, which holds basic css styles.
 
 # 4. License
 
