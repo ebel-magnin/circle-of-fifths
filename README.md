@@ -2,21 +2,45 @@
 
 In music theory, the circle of fifths is a way of organizing pitches as a sequence of perfect fifths. Starting on a C, and using the standard system of tuning for Western music (12-tone equal temperament), the sequence is: C, G, D, A, E, B, F♯ (G♭), C♯ (D♭), G♯ (A♭), D♯ (E♭), A♯ (B♭), E♯ (F), C. This order places the most closely related key signatures adjacent to one another. (source: https://en.wikipedia.org/wiki/Circle_of_fifths) It is usually illustrated in the form of a circle.
 
-The second part of the project is to add functionality to the circle of fifths using pure javascript. Also css is used in this part of the project.
-
 # 2. Requirements
 
-In this part of the project tone.js is used to play the chosen scale. There are no further requirements or packages needed.
+In this project tone.js is used to play the chosen scale. There are no further requirements or packages needed.
 
 # 3. Structure
 
 ## 3.1 index.html
 
-The index.html file only holds one div element. In this element the contents of the circle-of-fifths.svg, which was created by copying the svg element in the first part of the project with Chrome DevTools, is added to this div element. This makes the svg inline. I experimented with the html object element to load the svg file, but run into errors which to this day I cannot explain. I also included a html p element to show how the functionalities created by the circle-of-fifths.js script can de used.
+The index.html file only holds one div element. In this element the circle-of-fifths is created by the script **render-svg.js**. Functionality, such as showing the scale name, scale, scale chords and playing the scale, the created by the script **circle-of-fifths.js**.
 
-## 3.2 scale-object.js
+## 3.2 scripts folder
 
-The scale-object.js, which is contained in the script folder, holds four array variables:
+The scripts folder holds the following files:
+
+- scale-keys.js
+- scale-object.js
+- render-svg.js
+- circle-of-fifths.js
+
+### 3.2.1 scale-keys.js
+
+This file contains an array named scale-keys which holds the twelve major and minor keys as objects. The structure of the object is simple, see below example.
+
+```
+const scaleKeys = [
+  {
+    major: { key: "C", show: "C" },
+    minor: { key: "A", show: "a" },
+  },
+
+  ...
+]
+```
+
+The example shows the major and natural minor of C. The array is used by **render-svg.js** to place the major and minor keys in the major respectively minor circles.
+
+### 3.2.2 scale-object.js
+
+This file holds four array variables:
 
 - majorScale, holding the twelve major keys
 - minorScale, holding the twelve natural minor keys
@@ -41,9 +65,19 @@ The example shows the C major key, the pitches used by tone.js, the scale and th
 
 ![C Major Scale](images/c-major-scale.png)
 
-# 3.3 circle-of-fifths.js
+### 3.2.3 render-svg.js
 
-The script adds a click event listener to each of the keys by looping through node list created by the document.querySelectorAll method collecting all element with the class "key". When a major or minor key is clicked the processKey function is called. This function looks for data-key attribute value of the element and class "major" or "minor".
+This script starts by creating the svg element which is appended to the div element. It then adds the defs element, to which two filter elements are appended. Within both filter elements the feDropShadow element is appended.
+
+After the defs element, two circle elements are appended to the svg element. The script further appends twelve line elements using trigonometry to place them within the two circles in steps of 30 degrees, using an offset of 15 degrees. This divides the circles in twelve equal segments.
+
+Thereafter the script appends a third circle element to cover the lines after the second circle. The scripts then appends twenty four text elements using trigonometry to place the keys within the first two circles. Each text elements shows the major and minor keys which are held in the scale-keys array.
+
+To hold the text for the scale name, the scale and scale chords, the scripts appends three text elements to the svg element. Finally, the script appends a p element to the div element to show the explanation how to used the circle of fifths.
+
+### 3.2.4 circle-of-fifths.js
+
+The script adds a click event listener to each of the keys by looping through the node list created by the document.querySelectorAll method collecting all elements with the class "key". When a major or minor key is clicked the processKey function is called. This function looks for data-key attribute value of the element and class "major" or "minor".
 
 With those two values as paraments the showScale function is called. This function looks for the index of the key chosen in the majorScale or minorScale array. The index retrieved is then used to retrieve the object contained in the majorScaleObject or minorScaleObject. From the retrieved object the value of the keys "pitch", "scale" and "chords" is retrieved.
 
