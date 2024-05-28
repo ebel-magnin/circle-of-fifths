@@ -65,7 +65,7 @@ The example shows the C major key, the pitches used by tone.js, the scale and th
 
 ![C Major Scale](images/c-major-scale.png)
 
-Explantion. The third note (scale degree) of the D-major scale is F♯. As the C-major scale does not have any sharps or flats, F♯ becomes F which is a minor third making the chord Dm. Another way to look at it is as follows. The D-minor scale is the natural minor of F-major: F G A B♭ C D E F. The in this scale is the 6st note in this scale. Starting from D the D-minor scale is: D E F G A B♭ C D. The F is a minor third making the chord (D F A) a Dm. The same logic applies to the Em and Am scale chords. The odd one out is Bdim. This chord has a minor third and minor fifth, making the chord dimished.
+Explantion. The third note (scale degree) of the D-major scale is F♯. As the C-major scale does not have any sharps or flats, F♯ becomes F which is a minor third making the chord Dm. Another way to look at it is as follows. The D-minor scale is the natural minor of F-major: F G A B♭ C D E F. The D in this scale is the 6st note or 6st scale degree. Starting from D the D-minor scale is: D E F G A B♭ C D. The F is a minor third making the chord (D F A) a Dm. The same logic applies to the Em and Am scale chords of the C-major scale. The odd one out is Bdim. This chord has a minor third and minor fifth, making the chord dimished.
 
 ### 3.2.3 render-svg.js
 
