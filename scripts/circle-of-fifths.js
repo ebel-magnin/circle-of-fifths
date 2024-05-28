@@ -5,7 +5,7 @@ function buildFunctionality() {
   const keyElements = document.querySelectorAll(".key");
 
   /* Global Variables */
-  let soundScale = [];
+  let soundScale = "";
   let played = false;
 
   /* Add event listener to keys */
@@ -33,7 +33,7 @@ function buildFunctionality() {
     if (scaleType === "major") {
       const index = majorScales.indexOf(key, 0);
       const object = majorScaleObject[index];
-      soundScale = object.pitch;
+      soundScale = `sounds/${object.sound}`;
 
       scaleNameElement.innerHTML = `${key} - ${scaleType}`;
       scaleElement.innerHTML = object.scale;
@@ -41,7 +41,7 @@ function buildFunctionality() {
     } else if (scaleType === "minor") {
       const index = minorScales.indexOf(key, 0);
       const object = minorScaleObject[index];
-      soundScale = object.pitch;
+      soundScale = `sounds/${object.sound}`;
 
       scaleNameElement.innerHTML = `${key} - ${scaleType}`;
       scaleElement.innerHTML = object.scale;
@@ -49,28 +49,8 @@ function buildFunctionality() {
     }
   }
 
-  function reverseScale() {
-    let descending = soundScale.slice();
-    descending.pop();
-    descending.reverse();
-    soundScale = soundScale.concat(descending);
-  }
-
   function playScale() {
-    const synth = new Tone.Synth().toDestination();
-    if (!played) {
-      reverseScale();
-    }
-
-    let delay = Tone.now();
-    for (let i = 0; i < soundScale.length; i++) {
-      if (i === 0) {
-        delay += 0;
-      } else {
-        delay += 0.5;
-      }
-      synth.triggerAttackRelease(soundScale[i], "8n", delay);
-    }
-    played = true;
+    const player = new Tone.Player(soundScale).toDestination();
+    player.autostart = true;
   }
 }
