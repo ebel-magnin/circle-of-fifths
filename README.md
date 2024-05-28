@@ -65,6 +65,8 @@ The example shows the C major key, the pitches used by tone.js, the scale and th
 
 ![C Major Scale](images/c-major-scale.png)
 
+Explantion. The third note (scale degree) of the D-major scale is F♯. As the C-major scale does not have any sharps or flats, F♯ becomes F which is a minor third making the chord Dm. Another way to look at it is as follows. The D-minor scale is the natural minor of F-major: F G A B♭ C D E F. The in this scale is the 6st note in this scale. Starting from D the D-minor scale is: D E F G A B♭ C D. The F is a minor third making the chord (D F A) a Dm. The same logic applies to the Em and Am scale chords. The odd one out is Bdim. This chord has a minor third and minor fifth, making the chord dimished.
+
 ### 3.2.3 render-svg.js
 
 This script starts by creating the svg element which is appended to the div element. It then adds the defs element, to which two filter elements are appended. Within both filter elements the feDropShadow element is appended.
@@ -90,6 +92,7 @@ The end result looks like this.
 The third scale degree of the D-major scale is F♯. This is lowered by one semi-tone making it F making is a Dm. The third scale degree of E-major is G♯, which is lowered to G. Third scale degree of A-major is C♯, which is lowered to C. Third and fifth scale degree of B-major is D♯ respectively F♯ are both lowered with one semi-tone making them D respectively F. This makes it a diminished B chord.
 
 ## 3.3 styles folder
+
 This folder contains the file **circle-of-fifths.css**, which holds basic css styles.
 
 # 4. License
