@@ -56,6 +56,10 @@ svg {
   font-size: 0.8rem;
 }
 
+.scale-name {
+  cursor: pointer;
+}
+
 .explanation {
   width: 80%;
   font-size: 1rem;

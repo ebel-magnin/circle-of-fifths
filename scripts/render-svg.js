@@ -73,7 +73,7 @@ const scaleKeysAttributes = {
 const scaleNameElementAttributes = {
   "text-anchor": "middle",
   "dominant-baseline": "middle",
-  class: "js-scale-name small",
+  class: "js-scale-name scale-name small",
   x: 250,
   y: 220,
 };
