@@ -87,14 +87,14 @@ const scaleElementAttributes = {
 const scaleChordsElementAttributes = {
   "text-anchor": "middle",
   "dominant-baseline": "middle",
-  class: "js-scale-chords small",
+  class: "js-scale-chords scale-chords small",
   x: 250,
   y: 280,
 };
 
 /* Explanation */
 const explanation =
-  "To show and play the scale, click one of the 12 major or minor keys. The name of the chosen scale, the scale notes and the scale chords (triads) will be shown in the middle of the circle and the scale will be played in ascending and descending order. To clear the scale, click the name of the scale.";
+  "To show and play the scale, click one of the 12 major or minor keys. The name of the chosen scale, the scale notes and the scale chords (triads) will be shown in the middle of the circle and the scale will be played in ascending and descending order. By clicking the scale chords, the chords are played. To clear the scale, click the name of the scale.";
 
 /* Function to set attributes */
 function setAttributes(element, attributes) {

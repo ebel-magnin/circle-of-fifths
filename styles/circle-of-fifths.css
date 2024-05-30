@@ -60,6 +60,10 @@ svg {
   cursor: pointer;
 }
 
+.scale-chords {
+  cursor: pointer;
+}
+
 .explanation {
   width: 80%;
   font-size: 1rem;

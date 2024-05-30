@@ -26,7 +26,7 @@ In this project tone.js is used to play the chosen scale. There are no further r
 
 ## 4.1 index.html
 
-The index.html file only holds one div element. In this element the circle-of-fifths is created by the script **render-svg.js**. Functionality, such as showing the scale name, scale, scale chords and playing the scale, is created by the script **circle-of-fifths.js** after a timeout of one second.
+The index.html file only holds one div element. In this element the circle-of-fifths is created by the script **render-svg.js**. Functionality, such as showing the scale name, the scale, the scale chords and playing the scale, is created by the script **circle-of-fifths.js** after the circle of fifths is rendered.
 
 ## 4.2 scripts folder
 
@@ -72,16 +72,17 @@ const majorScaleObject = [
     scale: "C D E F G A B C",
     chords: "C Dm Em F G Am Bdim",
     sound: "C-major.mp3",
+    triads; "C-major-triads.mp3",
   },
   ...
 ]
 ```
 
-The example shows the C major key, the sound used by tone.js, the scale and the scale chords (triads) to be shown belonging to the scale. See below image.
+The example shows the C major key signature, the actual notes of the scale, the chords belonging to the scale, the sound used by tone.js and the scale chords (triads) also used by tone.js. See below image of scale chords.
 
 ![C Major Scale](images/c-major-scale.png)
 
-Explantion. The third note (scale degree) of the D-major scale is F♯. As the C-major scale does not have any sharps or flats, F♯ becomes F which is a minor third making the chord Dm. Another way to look at it is as follows. The D-minor scale is the natural minor of F-major: F G A B♭ C D E F. The D in this scale is the 6st note or 6st scale degree. Starting from D the D-minor scale is: D E F G A B♭ C D. The F is a minor third making the chord (D F A) a Dm. The same logic applies to the Em and Am scale chords of the C-major scale. The odd one out is Bdim. This chord has a minor third and minor fifth, making the chord dimished.
+Explantion. The third note (scale degree) of the D-major scale is F♯. As the C-major scale does not have any sharps or flats, F♯ becomes F which is a minor third making the chord Dm. Another way to look at it is as follows. The D-minor scale is the natural minor of F-major: F G A B♭ C D E F. The D in this scale is the 6st note or scale degree. Starting from D the D-minor scale is: D E F G A B♭ C D. The F is a minor third making the chord (D F A) a D minor. The same logic applies to the Em and Am scale chords of the C-major scale. The odd one out is Bdim. This chord has a minor third and minor fifth, making the chord dimished.
 
 ### 4.2.3 render-svg.js
 
@@ -95,11 +96,11 @@ To hold the text for the scale name, the scale and scale chords, the scripts app
 
 ### 4.2.4 circle-of-fifths.js
 
-The script adds a click event listener to each of the keys by looping through the node list created by the document.querySelectorAll method collecting all elements with the class "key". When a major or minor key is clicked the processKey function is called. This function looks for data-key attribute value of the element and class "major" or "minor".
+The script adds a click event listener to each of the keys by looping through the node list created by the document.querySelectorAll method collecting all elements with the class "key". When a major or minor key is clicked, the processKey function is called. This function looks for the data-key attribute value of the element and the class "major" or "minor".
 
-With those two values as paraments the showScale function is called. This function looks for the index of the key chosen in the majorScale or minorScale array. The index retrieved is then used to retrieve the object contained in the majorScaleObject or minorScaleObject. From the retrieved object the value of the keys "pitch", "scale" and "chords" is retrieved.
+With those two values as paraments the showScale function is called. This function looks for the index of the key chosen in the majorScale or minorScale array. The index retrieved is then used to retrieve the object contained in the majorScaleObject or minorScaleObject. From the retrieved object the value of the keys "sound", "scale", "chords" and "triads" is retrieved. The retrieved "sound" value and "triads" values are stored in the global variables soundScale and soundChords. These are used by the function playScale and playChords.
 
-The scale name, the scale and the scale chords are shown in the inner circle and the scale is played in ascending and descending order.
+The scale name, the scale and the scale chords are shown in the inner circle and the scale is played in ascending and descending order by the playScale function. The chords are played by the playChords function.
 
 The end result looks like this.
 
