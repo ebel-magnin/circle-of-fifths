@@ -133,7 +133,6 @@ const majorScaleObject = [
 const minorScaleObject = [
   {
     key: "A",
-
     pitch: ["A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4"],
     scale: "A B C D E F G A",
     chords: "A Bdim C Dm Em F G",
@@ -142,7 +141,6 @@ const minorScaleObject = [
   },
   {
     key: "E",
-
     pitch: ["E4", "F#4", "G4", "A4", "B4", "C5", "D5", "E5"],
     scale: "E F♯ G A B C D E",
     chords: "E F♯dim G Am Bm C D",
